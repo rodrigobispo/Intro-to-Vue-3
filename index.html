@@ -15,13 +15,18 @@
       <div class="product-display">
         <div class="product-container">
           <div class="product-image">
-            <img v-bind:src="image">
+            <img v-bind:src="image" :alt="description">
           </div>
           <div class="product-info">
             <h1>{{ product }}</h1>
+            <p>{{ description }}</p>
             <!-- solution -->
             <a :href="url">Made by Vue Mastery</a>
-           <!-- solution -->
+            <!-- solution -->
+            <p v-if="inventory > 10">In Stock</p>
+            <p v-else-if="inventory > 0 && inventory <= 10">Almost Sold Out</p>
+            <p v-else>Out of Stock</p>
+            <p v-show="onSale">On Sale</p>
           </div>
         </div>
       </div>
