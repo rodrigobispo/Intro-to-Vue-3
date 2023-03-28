@@ -20,13 +20,20 @@
           <div class="product-info">
             <h1>{{ product }}</h1>
             <p>{{ description }}</p>
-            <!-- solution -->
             <a :href="url">Made by Vue Mastery</a>
-            <!-- solution -->
             <p v-if="inventory > 10">In Stock</p>
             <p v-else-if="inventory > 0 && inventory <= 10">Almost Sold Out</p>
             <p v-else>Out of Stock</p>
             <p v-show="onSale">On Sale</p>
+            <ul>
+              <li v-for="detail in details">{{ detail }}</li>
+            </ul>
+            <div v-for="variant in variants" :key="variant.id">{{ variant.color }}</div>
+            <div>
+              <ul>
+                <li v-for="size in sizes">{{ size }}</li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
