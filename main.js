@@ -5,8 +5,9 @@ const app = Vue.createApp({
             description: 'Confortáveis e unissex.',
             image: './assets/images/socks_green.jpg',
             url: 'https://www.vuemastery.com/',
-            inventory: 8,
-            onSale: true,
+            inventory: 3,
+            inStock: false,
+            onSale: false,
             details: ['50% cotton', '30% wool', '20% polyester'],
             variants: [
                 { id: 2234, color: 'green', image: './assets/images/socks_green.jpg' },
