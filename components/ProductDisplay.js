@@ -43,7 +43,13 @@ application.component('product-display', {
           :disabled="!inStock">
           Add to Cart
         </button>
-        <button class="button" @click="removeFromCart">Remove</button>
+        <button
+          class="button"
+          @click="removeFromCart"
+          :class="{ disabledButton: !inStock }" 
+          :disabled="!inStock">
+          Remove Item
+        </button>
       </div>
     </div>
     </div>
@@ -62,17 +68,15 @@ application.component('product-display', {
                 { id: 2234, color: 'green', image: './assets/images/socks_green.jpg', quantity: 8 },
                 { id: 2235, color: 'blue', image: './assets/images/socks_blue.jpg', quantity: 0 }
             ],
-            sizes: ['S', 'M', 'L', "XL"]
+            sizes: ['S', 'M', 'L', 'XL']
         }
     },
     methods: {
         addToCart() {
-            this.cart += 1;
+            this.$emit('add-to-cart', this.variants[this.selectedVariant].id)
         },
         removeFromCart() {
-            if (this.cart >= 1) {
-                this.cart -= 1;
-            }
+            this.$emit('remove-from-cart', this.variants[this.selectedVariant].id)
         },
         updateImage(variantImage) {
             this.image = variantImage;
