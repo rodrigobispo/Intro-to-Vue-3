@@ -6,7 +6,7 @@ application.component('product-display', {
         }
     },
     template:
-    /*hmtl*/
+    /*html*/
     `
     <div class="product-display">
     <div class="product-container">

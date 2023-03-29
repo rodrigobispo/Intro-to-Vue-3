@@ -6,7 +6,7 @@ application.component('product-details', {
         }
     },
     template:
-    /*hmtl*/
+    /*html*/
     `
     <ul>
         <li v-for="detail in details">{{ detail }}</li>
